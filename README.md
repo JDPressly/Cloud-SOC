@@ -22,7 +22,7 @@ Within this project, I created a miniature honeynet environment in Microsoft Azu
 
 ## Architecture After Hardening / Security Controls
 <p align="center">
-  <img src="https://i.ibb.co/JpJLzBg/After-Hardening-drawio-1.png" />
+  <img src="https://i.ibb.co/YBjHQHm/After-Hardening-drawio-Final.png" />
 </p>
 
 The architecture of the mini honeynet in Azure consists of the following components:
