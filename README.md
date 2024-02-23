@@ -1,11 +1,13 @@
 # Building a SOC + Honeynet in Azure (Live Traffic)
-![Cloud Honeynet / SOC](https://i.ibb.co/phw9WdV/Honeynet-Diagram-Final2.png)
+<p align="center">
+  <img src="https://i.ibb.co/XL6Jjx8/Honeynet-Diagram-Final2.png" />
+</p>
 
 ## Introduction
 
 Hello!
 
-In this project, I created a mini honeynet in Azure and ingest log sources from various resources into a Log Analytics workspace, which is then used by Microsoft Sentinel to build attack maps, trigger alerts, and create incidents. I measured some security metrics in the insecure environment for 24 hours, apply some security controls to harden the environment, measure metrics for another 24 hours, then show the results below. The metrics we will show are:
+Within this project, I created a miniature honeynet environment in Microsoft Azure, integrating various log sources into a Log Analytics workspace. Microsoft Sentinel served as the core tool for generating attack maps, triggering alerts, and managing incidents. The process involved measuring security metrics within the vulnerable environment for a 24-hour period, implementing security controls to fortify and harden the setup, and then conducting another 24-hour measurement to observe the impacts. The metrics presented include:
 
 - SecurityEvent (Windows Event Logs)
 - Syslog (Linux Event Logs)
@@ -14,10 +16,14 @@ In this project, I created a mini honeynet in Azure and ingest log sources from 
 - AzureNetworkAnalytics_CL (Malicious Flows allowed into our honeynet)
 
 ## Architecture Before Hardening / Security Controls
-![Architecture Diagram](https://i.ibb.co/TTZmXmq/Before-Hardening-drawio.png)
+<p align="center">
+  <img src="https://i.ibb.co/mDnsng3/Before-Hardening-drawio-3.png" />
+</p>
 
 ## Architecture After Hardening / Security Controls
-![Architecture Diagram](https://i.ibb.co/JpJLzBg/After-Hardening-drawio-1.png)
+<p align="center">
+  <img src="https://i.ibb.co/JpJLzBg/After-Hardening-drawio-1.png" />
+</p>
 
 The architecture of the mini honeynet in Azure consists of the following components:
 
@@ -29,9 +35,9 @@ The architecture of the mini honeynet in Azure consists of the following compone
 - Azure Storage Account
 - Microsoft Sentinel
 
-For the "BEFORE" metrics, all resources were originally deployed, exposed to the internet. The Virtual Machines had both their Network Security Groups and built-in firewalls wide open, and all other resources are deployed with public endpoints visible to the Internet; aka, no use for Private Endpoints.
+For the "BEFORE" metrics, all resources were exposed to the internet. The Virtual Machines had both their Network Security Groups and built-in firewalls wide open, and all other resources are deployed with public endpoints visible to the Internet. 
 
-For the "AFTER" metrics, Network Security Groups were hardened by blocking ALL traffic with the exception of my admin workstation, and all other resources were protected by their built-in firewalls as well as Private Endpoint
+For the "AFTER" metrics, Network Security Groups were hardened by blocking ALL traffic with the exception of my admin workstation, and all other resources were protected by their built-in firewalls as well as Private Endpoint.
 
 ## Attack Maps Before Hardening / Security Controls
 
@@ -62,7 +68,7 @@ Stop Time 2024-01-18 22:53:26
 
 ## Attack Maps Before Hardening / Security Controls
 
-```All map queries actually returned no results due to no instances of malicious activity for the 24 hour period after hardening.```
+```All map queries returned no results due to no malicious activity for the 24 hour period after hardening.```
 
 ## Metrics After Hardening / Security Controls
 
